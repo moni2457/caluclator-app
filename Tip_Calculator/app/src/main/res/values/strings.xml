@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TIP CALC</string>
+    <string name="tip">TIP%</string>
+    <string name="persons">PEOPLE</string>
+    <string name="tipValue">TIP</string>
+    <string name="total">TOTAL</string>
+    <string name="tip_per_person">TIP PER PERSON</string>
+    <string name="total_per_person">TOTAL PER PERSON</string>
+    <string name="zero">$0.00</string>
+    <string name="one">1</string>
+    <string name="defualtTip">15%</string>
+    <string name="defaultValue">0</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="clear_all">CLEAR ALL</string>
+    <string name="bill_amt">BILL</string>
+    <string name="logo">logo</string>
+</resources>

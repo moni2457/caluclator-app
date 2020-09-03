@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/textViewBillAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/bill_amt"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/TextViewTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/tip"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@id/textViewBillAmount" />
+
+    <TextView
+        android:id="@+id/textViewPersons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/persons"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewTip" />
+
+
+    <EditText
+        android:id="@+id/editTextBill"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="end"
+        android:hint="@string/defaultValue"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:text="$0"
+        android:importantForAutofill="no" />
+
+    <SeekBar
+        android:id="@+id/seekBarTip"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="24dp"
+        android:max="25"
+        android:progress="5"
+        app:layout_constraintStart_toStartOf="@+id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBill" />
+
+    <SeekBar
+        android:id="@+id/seekBarPerson"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:max="25"
+        android:progress="5"
+        app:layout_constraintStart_toStartOf="@+id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTip" />
+
+    <TextView
+        android:id="@+id/textViewTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/tipValue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@id/buttonCalculate" />
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/total"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@id/textViewTip" />
+
+    <TextView
+        android:id="@+id/textViewTipPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/tip_per_person"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@id/textViewTotal" />
+
+    <TextView
+        android:id="@+id/textViewTotalPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/total_per_person"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textViewBillAmount"
+        app:layout_constraintTop_toBottomOf="@id/textViewTipPP" />
+
+    <TextView
+        android:id="@+id/textViewTipvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@id/buttonClear" />
+
+    <TextView
+        android:id="@+id/textViewTotalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@id/textViewTipvalue" />
+
+    <TextView
+        android:id="@+id/textViewTipPPValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@id/textViewTotalValue" />
+
+    <TextView
+        android:id="@+id/textViewTotalPPValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@id/textViewTipPPValue" />
+
+    <TextView
+        android:id="@+id/tvTipValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/defualtTip"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@id/editTextBill" />
+
+    <TextView
+        android:id="@+id/tvPersonValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/one"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/editTextBill"
+        app:layout_constraintTop_toBottomOf="@id/seekBarTip" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:text="@string/calculate"
+        android:background="#BDBDBD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBarPerson" />
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="60dp"
+        android:text="@string/clear_all"
+        android:background="#BDBDBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBarPerson" />
+</androidx.constraintlayout.widget.ConstraintLayout>
